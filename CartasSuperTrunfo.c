@@ -75,12 +75,16 @@ int main() {
     char cidade_8_4[50];
     char codigo_carta[10];
 
+    // Variável para informar se as informações da carta estão corretas;
+
+    int correto = 1;
+
     //Tela de boas vindas, apresentação e tutorial do jogo
 
     printf("Bem vindo ao jogo de cartas Super Trunfo.\n\n");
     printf("Instruções do jogo\n\n");
     printf("Você deverá escolher um país que seguirá como referência para as suas cartas.\nEste país será dividido em oito estados, identificados pelas letras de A a H.\nCada estado terá quatro cidades, numeradas de 1 a 4. A combinação da letra do estado\ne o número da cidade define o código da carta (por exemplo, A01, A02, B01, B02), totalizando assim 32 cartas.\n");
-    printf("\n\n\Cadastre as cartas conforme orientações abaixo:\n\n");
+    printf("\n\nCadastre as cartas conforme orientações abaixo:\n\n");
 
     /////////////////////////////preenchimento das informações das cartas////////////////////////
 
@@ -98,23 +102,45 @@ int main() {
     scanf("%s", &cidade_1_1);
     printf("\n\n");
 
-    printf("Agora insira as informações referente à cidade %s, conforme instruções abaixo:/n", cidade_1_1);
+    printf("Agora insira as informações referente à cidade %s, conforme instruções abaixo:\n\n", cidade_1_1);
 
-    printf("Digite a quantidade de habitantes da cidade (USE APENAS NÚMEROS, EX: 40000): ");
-    scanf("%d", &populacao1);
-    printf("\n\n");
+    while(correto);
+    {
+        printf("Digite a quantidade de habitantes da cidade (USE APENAS NÚMEROS, EX: 40000): ");
+        scanf("%d", &populacao1);
+        printf("\n\n");
 
-    printf("Digite a área da cidade em quilômetros quadrados (USE APENAS NÚMEROS, EX: 305.402): ");
-    scanf("%f", &area1);
-    printf("\n\n");
+        printf("Digite a área da cidade em quilômetros quadrados (USE APENAS NÚMEROS, EX: 305.402): ");
+        scanf("%f", &area1);
+        printf("\n\n");
 
-    printf("Digite o PIB da cidade (USE APENAS NÚMEROS, EX: 4.546.551,55): ");
-    scanf("%f", &pib1);
-    printf("\n\n");
+        printf("Digite o PIB da cidade (USE APENAS NÚMEROS, EX: 4.546.551,55): ");
+        scanf("%f", &pib1);
+        printf("\n\n");
 
-    printf("Digite o número de pontos turísticos existentes na cidade (USE APENAS NÚMEROS, EX: 10):");
-    scanf("%d", &turismo1);
-    printf("\n\n\n\n\n\n");
+        printf("Digite o número de pontos turísticos existentes na cidade (USE APENAS NÚMEROS, EX: 10):");
+        scanf("%d", &turismo1);
+        printf("\n\n\n\n\n\n");
+
+        printf("Confira os dados inseridos referentes a cidade %s\n\n", cidade_1_1);
+
+        printf("Pupulação: %d habitantes;\n", populacao1);
+        printf("Área: %f Quilômetros Quadrados;\n", area1);
+        printf("PIB: %f de reais\n", pib1);
+        printf("Quantidade de Pontos turísticos: %d\n", turismo1);
+
+        printf("Os dados estão corretos? Caso esteja correto digite 0, se não, digite 1: ");
+        scanf("%d", &correto);
+        printf("\n\n\n\n\n\n");
+    }
+
+    correto = 1;
+
+    printf("Carta A01 cadastrada com sucesso\n\n");
+
+    printf("");
+
+
 
     return 0;
 }
