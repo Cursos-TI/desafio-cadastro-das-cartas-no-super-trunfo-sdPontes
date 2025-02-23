@@ -12,12 +12,13 @@ int main()
     char estado1, estado2;
     char codigoCarta1[20], codigoCarta2[20];
     char nomeCidade1[100], nomeCidade2[100];
-    int populacao1, populacao2;
+    unsigned long int populacao1, populacao2;
     float area1, area2;
     float pib1, pib2;
     int pontosTuristicos1, pontosTuristicos2;
     float densidade1, densidade2;
     float percap1, percap2;
+    float poder1, poder2;
 
     //Apresentação do jogo
 
@@ -121,7 +122,7 @@ int main()
 
     //SEGUNDA CARTA CADASTRADA.
 
-    //CALCULO DA DENSIDADE POPULACIONAL E DO PIB PER CAPTA.
+    //CALCULO DA DENSIDADE POPULACIONAL E DO PIB PER CAPITA.
 
     densidade1 = (float) populacao1 / area1;
     densidade2 = (float) populacao2 / area2;
@@ -161,8 +162,42 @@ int main()
     printf("PIB per Capita: %.2f reais", percap2);
     printf("\n\n\n");
 
-    //Fim do Programa!!
+    // *************************CALCULO DOS PODERES DE AMBAS AS CARTAS**************************
 
+    poder1 = (float) (populacao1 + area1 + pib1 + pontosTuristicos1 + percap1) - densidade1;
+    poder2 = (float) (populacao2 + area2 + pib2 + pontosTuristicos2 + percap2) - densidade2;
+
+    //***********************************COMPARAÇÃO DAS CARTAS***********************************
+
+    printf("Comparação das cartas: \n");
+
+    //OPERADOR TERNÁRIO UTILIZADO DENTRO DO PRINTF PARA SIMPLIFICAR O CÓDIGO E TESTAR QUAL DAS CARTAS GANHARÁ
+    //CASO A CONDIÇÃO SEJA VERDADEIRA, SENDO A PRIMEIRA CARTA VENCEDORA, IRÁ IMPRIMIR A PRIMEIRA MENSAGEM.
+    //CASO A CONDIÇÃO SEJA FALSA, SENDO A SEGUNDA CARTA VENCEDORA, IRÁ IMPRIMIR A SEGUNDA MENSAGEM.
+
+    //CONDIÇÃO POPULAÇÃO.
+    printf(populacao1 > populacao2 ? "População: Carta 1 venceu (1)\n" : "População: Carta 2 venceu (0)\n");
+
+    //CONDIÇÃO ÁREA.
+    printf(area1 > area2 ? "Área: Carta 1 venceu (1)\n" : "Área: Carta 2 venceu (0)\n");
+
+    //CONDIÇÃO PIB.
+    printf(pib1 > pib2 ? "PIB: Carta 1 venceu (1)\n" : "PIB: Carta 2 venceu (0)\n");
+
+    //CONDIÇÃO PONTOS TURÍSTICOS.
+    printf(pontosTuristicos1 > pontosTuristicos2 ? "Pontos Turísticos: Carta 1 venceu (1)\n" : "Pontos Turísticos: Carta 2 venceu (0)\n");
+
+    //CONDIÇÃO DENSIDADE POPULACIONAL.
+    printf(densidade1 < densidade2 ? "Densidade Populacional: Carta 1 venceu (1)\n" : "Densidade Populacional: Carta 2 venceu (0)\n");
+
+    //CONDIÇÃO PER CAPITA.
+    printf(percap1 > percap2 ? "PIB per Capita: Carta 1 venceu (1)\n" : "PIB per Capita: Carta 2 venceu (0)\n");
+
+    //CONDIÇÃO PODER.
+    printf(poder1 > poder2 ? "Super Poder: Carta 1 venceu (1)\n" : "Super Poder: Carta 2 venceu (0)\n");
+
+
+    // FIM DO CÓDIGO;
     return 0;
 
 }
