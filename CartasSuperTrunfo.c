@@ -16,6 +16,8 @@ int main()
     float area1, area2;
     float pib1, pib2;
     int pontosTuristicos1, pontosTuristicos2;
+    float densidade1, densidade2;
+    float percap1, percap2;
 
     //Apresentação do jogo
 
@@ -52,13 +54,13 @@ int main()
 
     //INSERINDO OS DADOS DA AREA
 
-    printf("Digite o tamanho em Km2 da cidade: \n");
+    printf("Digite o o tamanho em Km2 da cidade: \n");
     scanf("%f", &area1);
     printf("\n\n");// Pulando linha para deixar a tela mais limpa.
 
     //INSERINDO OS DADOS DO PIB
 
-    printf("Digite o PIB da cidade: \n");
+    printf("Digite o PIB da cidade em Bilhões de reais: \n");
     scanf("%f", &pib1);
     printf("\n\n");// Pulando linha para deixar a tela mais limpa.
 
@@ -101,13 +103,13 @@ int main()
 
     //INSERINDO OS DADOS DA AREA
 
-    printf("Digite o tamanho em Km2 da cidade: \n");
+    printf("Digite o o tamanho em Km2 da cidade: \n");
     scanf("%f", &area2);
     printf("\n\n");// Pulando linha para deixar a tela mais limpa.
 
     //INSERINDO OS DADOS DO PIB
 
-    printf("Digite o PIB da cidade: \n");
+    printf("Digite o PIB da cidade em Bilhões de reais: \n");
     scanf("%f", &pib2);
     printf("\n\n");// Pulando linha para deixar a tela mais limpa.
 
@@ -118,6 +120,14 @@ int main()
     printf("\n\n");// Pulando linha para deixar a tela mais limpa.
 
     //SEGUNDA CARTA CADASTRADA.
+
+    //CALCULO DA DENSIDADE POPULACIONAL E DO PIB PER CAPTA.
+
+    densidade1 = (float) populacao1 / area1;
+    densidade2 = (float) populacao2 / area2;
+
+    percap1 = (float) (pib1*1000000000) / populacao1; //Foi utilizado a conversão da unidade para bilhões.
+    percap2 = (float) (pib2*1000000000) / populacao2; //Foi utilizado a conversão da unidade para bilhões.
 
     //APRESENTAÇÃO DAS CARTAS.
 
@@ -133,6 +143,8 @@ int main()
     printf("Área: %.2f Km2\n", area1);
     printf("PIB: %.2f Bilhões de reais\n", pib1);
     printf("Números de pontos turísticos: %d\n", pontosTuristicos1);
+    printf("Densidade populacional: %.2f hab/Km2\n", densidade1);
+    printf("PIB per Capita: %.2f reais", percap1);
     printf("\n\n\n");
 
     //EXIBIÇÃO CARTA 02;
@@ -145,6 +157,8 @@ int main()
     printf("Área: %.2f Km2\n", area2);
     printf("PIB: %.2f Bilhões de reais\n", pib2);
     printf("Números de pontos turísticos: %d\n", pontosTuristicos2);
+    printf("Densidade populacional: %.2f hab/Km2\n", densidade2);
+    printf("PIB per Capita: %.2f reais", percap2);
     printf("\n\n\n");
 
     //Fim do Programa!!
